@@ -28,6 +28,8 @@ public class Bot extends TelegramLongPollingBot {
 
         } catch (TelegramApiRequestException e) {
             e.printStackTrace();
+        }catch (NullPointerException e){
+            e.printStackTrace();
         }
     }
 
@@ -163,8 +165,7 @@ public class Bot extends TelegramLongPollingBot {
         EditMessageText sendMessage = new EditMessageText()
                 .setChatId(callbackQuery.getMessage().getChatId())
                 .setMessageId(callbackQuery.getMessage().getMessageId())
-                .setText("Привет!✋ " + "\n" +
-                        "Я бот для перевода текста!\uD83D\uDCC4");
+                .setText("Привет!✋ ");
 
 
 
